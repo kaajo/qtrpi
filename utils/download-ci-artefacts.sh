@@ -8,7 +8,7 @@ mkdir -p dist
 cd dist
 
 for VERSION in '5.6.2' '5.7.0'; do
-    for DEVICE in 'linux-rasp-pi-g++' 'linux-rasp-pi2-g++' 'linux-rpi3-g++'; do
+    for DEVICE in 'linux-rasp-pi-g++' 'linux-rasp-pi2-g++' 'linux-rasp-pi3-g++'; do
         NAME=$(device_name $DEVICE)
         QTRPI_CURL_OPT="--user $CI_AUTH_USER:$CI_AUTH_PASSWORD"
         QTRPI_BASE_URL="$CI_BASE_URL/job/qtrpi/QT_VERSION=$VERSION,TARGET_DEVICE=$DEVICE/lastSuccessfulBuild/artifact/dist"

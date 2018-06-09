@@ -23,13 +23,13 @@ function device_name() {
     case $1 in
         'linux-rasp-pi-g++') NAME='rpi1' ;;
         'linux-rasp-pi2-g++') NAME='rpi2' ;;
-        'linux-rpi3-g++') NAME='rpi3' ;;
+        'linux-rasp-pi3-g++') NAME='rpi3' ;;
     esac
     echo $NAME
 }
 
 validate_var_qtrpi_qt_version() {
-    for VERSION in '5.6.2' '5.7.0'; do
+    for VERSION in '5.6.2' '5.7.0' '5.10.0'; do
         if [[ "$QTRPI_QT_VERSION" == "$VERSION" ]]; then
             VALID=true
         fi
@@ -44,7 +44,7 @@ validate_var_qtrpi_target_device() {
     NAME=$(device_name $QTRPI_TARGET_DEVICE)
 
     if [[ ! $NAME ]]; then
-        exit_error "Invalid QTRPI_TARGET_DEVICE value ($QTRPI_TARGET_DEVICE). Supported values: \n- linux-rasp-pi-g++ \n- linux-rasp-pi2-g++ \n- linux-rpi3-g++"
+        exit_error "Invalid QTRPI_TARGET_DEVICE value ($QTRPI_TARGET_DEVICE). Supported values: \n- linux-rasp-pi-g++ \n- linux-rasp-pi2-g++ \n- linux-rasp-pi3-g++"
     fi
 }
 

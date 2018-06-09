@@ -1,8 +1,9 @@
 # Qt modules list
 qtbase
 qtdeclarative
-qt3d
+#qt3d
 qtquickcontrols
 qtquickcontrols2
 qtserialport
+qtserialbus
 qtsvg
